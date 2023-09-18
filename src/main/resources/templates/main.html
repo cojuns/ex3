@@ -6,5 +6,19 @@
 </head>
 <body>
 <h2>메인 페이지</h2>
+<div class="fruits">
+    <p>Apple</p>
+    <p>Banana</p>
+    <p>Orange</p>
+</div>
+<script>
+    const fruits = document.querySelectorAll(".fruits p");
+    const fruitArray = Array.from(fruits);
+    console.log(fruitArray);
+
+    const fruitNames = fruitArray.map( fruit => fruit.textContent);
+    console.log(fruitNames);
+</script>
+
 </body>
 </html>
