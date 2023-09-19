@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table border="1">
+    <tr th:each="dto : ${list}">
+        <td>
+            [[${dto.sno}]]
+        </td>
+        <td>
+            [[${dto.first}]]
+        </td>
+        <td>
+            [[${dto.last}]]
+        </td>
+        <td>
+            [[${dto.regTime}]]
+        </td>
+    </tr>
+    </table>
+</body>
+</html>

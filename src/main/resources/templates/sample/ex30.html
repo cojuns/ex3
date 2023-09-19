@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>inline속성</title>
+</head>
+<body>
+
+<h1 th:text="${result}"></h1>
+<h1 th:text="${dto}"></h1>
+
+<script th:inline="javascript">
+    let msg = [[${result}]];
+    let dto = [[${dto}]];
+    console.log(dto.first, dto.last, dto.regTime, dto.sno);
+    let test = JSON.parse(`[[${dto}]]`);
+    console.log(test.sno, test.last);
+    console.log(test);
+</script>
+
+</body>
+</html>

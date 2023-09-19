@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>제어문 삼항연산자_1</title>
+</head>
+<body>
+
+    <ul>
+       <li th:each="dto : ${list}" th:text="${dto.sno % 5 == 0} ? ${dto.sno}">
+       </li>
+    </ul>
+
+</body>
+</html>

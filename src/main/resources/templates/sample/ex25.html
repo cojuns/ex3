@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>제어문 처리(else if)</title>
+</head>
+<body>
+
+<ul>
+    <li th:each="dto, state123 : ${list}" >
+        <span th:if="${dto.sno % 5 == 0}" th:text="${'--------' + dto.sno}">
+        </span>
+        <span th:unless="${dto.sno % 5 == 0}" th:text="${dto.first}">
+        </span>
+    </li>
+</ul>
+
+</body>
+</html>

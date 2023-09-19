@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>링크처리</title>
+</head>
+<body>
+
+    <ul>
+       <li th:each="dto : ${list}">
+           <a th:href="@{/sample/exView(sno=${dto.sno})}">[[${dto}]]</a>
+       </li>
+    </ul>
+
+</body>
+</html>
