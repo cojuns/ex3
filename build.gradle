@@ -37,6 +37,15 @@ dependencies {
     // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api
     testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.10.0'
 
+    //Selenium 크롤링
+//    implementation 'org.springframework.boot:spring-boot-starter'
+//    implementation 'org.seleniumhq.selenium:selenium-java:3.141.59'
+//    implementation 'org.seleniumhq.selenium:selenium-chrome-driver:3.141.59'
+
+    // JSoup 크롤링
+    implementation 'org.jsoup:jsoup:1.14.3'
+
+
 }
 
 tasks.named('test') {

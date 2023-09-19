@@ -1,6 +1,7 @@
 package org.zerock.ex3.web;
 
 import lombok.extern.log4j.Log4j2;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.zerock.ex3.web.dto.SampleDTO;
+import org.zerock.ex3.web.service.WebScraperService;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -19,6 +21,9 @@ import java.util.stream.IntStream;
 @RequestMapping("/sample")
 @Log4j2
 public class SampleController {
+
+    @Autowired
+    WebScraperService webScraperService;
 
     @GetMapping("/ex1")
     public void ex1(){
@@ -75,9 +80,12 @@ public class SampleController {
         return "redirect:/sample/ex30";
     }
 
-    @GetMapping("/ex30")
-    public void ex3(){
-        log.info("ex30");
+    @GetMapping("/ex31")
+    public String ex3(Model model){
+        webScraperService.scrapeWebsite(model);
+        return "/sample/ex31";
+
+
     }
 
 }
