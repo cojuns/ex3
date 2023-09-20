@@ -88,4 +88,9 @@ public class SampleController {
 
     }
 
+    @GetMapping({"/exLayout1", "/exSidebar"})
+    public void exLayout(){
+        log.info("exLayout................");
+    }
+
 }

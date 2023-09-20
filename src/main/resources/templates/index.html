@@ -1,6 +1,8 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
+<th:block th:replace="~{/layout/basic :: setContent(~{this::content}) }">
+  <th:block th:fragment="content">
+  <head>
   <title>top page</title>
   <meta http-equiv="Content-Type"
         content="text/html; charset=UTF-8" />
@@ -10,11 +12,14 @@
     tr { margin:5px; }
     th { padding:5px; color:white; background:darkgray; }
     td { padding:5px; color:black; background:#e0e0ff; }
+    .tables{
+      margin-left: 100px;
+    }
   </style>
 </head>
 <body>
 <h1 th:text="#{content.title}">Helo page</h1>
-<table>
+<table class="tables">
   <form method="post" action="/" th:object="${formModel}">
     <tr><td><label for="name">이름</label></td>
       <td><input type="text" name="name" th:value="*{name}" /></td></tr>
@@ -42,4 +47,9 @@
   </tr>
 </table>
 </body>
+
+  </th:block>
+
+</th:block>
+
 </html>
