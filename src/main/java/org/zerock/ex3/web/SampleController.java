@@ -31,8 +31,8 @@ public class SampleController {
     }
 
     @GetMapping({"/ex2", "/ex22", "/ex23", "/ex24",
-                "/ex25", "/ex26", "/ex27","/ex28",
-                "/ex29","/exLink"})
+            "/ex25", "/ex26", "/ex27","/ex28",
+            "/ex29","/exLink", "/exDate", "/exDate2"})
     public void ex2(Model model){
 
         List<SampleDTO> list2 = new ArrayList<>();
@@ -48,14 +48,14 @@ public class SampleController {
         // 컬렉션 스트림을 이용하여 1~20까지 정수를 발생, 발생한 정수를 Long 타입으로
         // 변경하여 람다식을 통해 dto 객체를 생성합니다.
         List<SampleDTO> list = IntStream.rangeClosed(1, 20)
-                    .asLongStream().mapToObj(i -> {
-                        SampleDTO dto = SampleDTO.builder()
-                                .sno(i)
-                                .first("First.." + i)
-                                .last("Last.." + i)
-                                .regTime(LocalDateTime.now())
-                                .build();
-                        return dto;
+                .asLongStream().mapToObj(i -> {
+                    SampleDTO dto = SampleDTO.builder()
+                            .sno(i)
+                            .first("First.." + i)
+                            .last("Last.." + i)
+                            .regTime(LocalDateTime.now())
+                            .build();
+                    return dto;
                 }).collect(Collectors.toList());
         model.addAttribute("list", list);
 
