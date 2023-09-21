@@ -1,9 +1,12 @@
 package org.zerock.ex3.entity;
 
+import lombok.ToString;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name="mydata")
+@ToString
 public class MyData {
 
     @Id
